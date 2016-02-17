@@ -6,7 +6,8 @@ namespace WeatherParsing
     public class WeatherContext : DbContext
     {
 
-      public DbSet<oceanWeather> oceanWeathers { get; set; }
+      public DbSet<WaveWindModel> WaveWindModels { get; set; }
+      public DbSet<OceanModel>  OceanModels { get; set; }
 
     }
 }

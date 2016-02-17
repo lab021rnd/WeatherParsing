@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WeatherParsing
 {
-    public class oceanWeather
+    public class WaveWindModel
     {
 
         public Guid Id { get; set; }
@@ -26,10 +26,6 @@ namespace WeatherParsing
         public double WVHGT { get; set; }
         public double WDIR { get; set; }
         public double WIND { get; set; }
-        public double DENSITY { get; set; }
-        public double SSS { get; set; }
-        public double SST { get; set; }
-        public double Current_UV { get; set; }
-        public double Current_VV { get; set; }
+     
     }
 }
