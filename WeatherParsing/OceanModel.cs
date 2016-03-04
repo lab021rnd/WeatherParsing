@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WeatherParsing
 {
     public class OceanModel
     {
-        public Guid Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
         public DateTime UTC { get; set; }
-        public string lat { get; set; }
-        public string lon { get; set; }
+        public double lat { get; set; }
+        public double lon { get; set; }
         public double DENSITY { get; set; }
         public double SSS { get; set; }
         public double SST { get; set; }
