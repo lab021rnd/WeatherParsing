@@ -27,6 +27,8 @@ namespace WeatherParsing
             List<string> filename = new List<string> { };
             string dirPath = fileNameBox.Text;
 
+            var wavedataout = WaveParsing(@"c:\gwes00.glo_30m.t18z.grib2");
+
             if (System.IO.Directory.Exists(dirPath))
             {
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(dirPath);
@@ -42,7 +44,7 @@ namespace WeatherParsing
 
                     foreach (var fileitem in di2.GetFiles())
                     {
-                        var wavedataout = WaveParsing(pathname + "\\" + fileitem.Name);
+                        //var wavedataout = WaveParsing(@"c:\gwes00.glo_30m.t18z.grib2");
 
                         EFBatchOperation.For(db, db.WaveWindModels).InsertAll(wavedataout);
 
